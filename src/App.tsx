@@ -1,12 +1,21 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
+import Game from "./Routes/game";
+import Menu from "./Routes/menu";
 
 function App() {
   return (
-    <div>
-      <h1>The aplication started</h1>
-    </div>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Menu />
+          </Route>
+          <Route path="/game">
+            <Game />
+          </Route>
+        </Switch>
+      </Router>
   );
 }
 

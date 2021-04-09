@@ -1,0 +1,50 @@
+.card {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+/* .card:hover {
+    opacity: 0.9;
+} */
+
+.card.fliped .front {
+    transform: rotateY(180deg);
+}
+
+.card.fliped .back {
+    transform: rotateY(0deg);
+}
+
+.front, .back {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: -webkit-transform ease 300ms;
+    transition: transform ease 300ms;
+}
+
+.back {
+    z-index: 2;
+    transform: rotateY(-180deg);
+    background-color: lightslategray;
+    /* front tile styles go here! */
+}
+.front {
+    background-color: darkslategray;
+    transform: rotateY(0);
+    padding: 20px;
+    font-size: 20px;
+    /* back tile styles go here! */
+}
